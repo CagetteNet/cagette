@@ -6,8 +6,15 @@
 				::if user!=null && user.getAmap()!=null::
 					<h1>::user.getAmap().name::</h1>
 				::else::
-					<h1 style="margin-bottom:22px;"><a href="/">Cagette.net</a></h1>
-					
+					<table><tr>
+					<td><h1 style="margin-bottom:22px;"><a href="/">Cagette.net</a></h1></td>
+					<td width="12%"></td>
+					<td id="hostURL"></td>
+					</tr></table>
+					<script language="JavaScript">
+						var x = " hébergé par " + window.location.protocol + "//" + window.location.host;
+						document.getElementById("hostURL").innerHTML = x;;	
+					</script>					
 				::end::
 				
 			</div>
