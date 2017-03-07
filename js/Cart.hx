@@ -367,11 +367,12 @@ class Cart
 			}
 
 			//product DB
+			var id : Int = 0;
 			for (p in data.products) {
 				//catch dom element for further usage
 				p.element = App.j(".product"+p.id);
 
-				var id : Int = p.id;
+				id = id + 1;
 				products.set(id, p);
 				
 				//trace(p.name+" : " + p.categories);
