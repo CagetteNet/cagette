@@ -116,11 +116,11 @@ class UserContract extends Object
 			x.productId = o.product.id;
 			x.productRef = o.product.ref;
 			x.productName = o.product.getName();
-			x.productPrice = o.productPrice;
+			x.productPrice = o.product.price;
 			x.productImage = o.product.getImage();
 			
 			x.quantity = o.quantity;
-			x.subTotal = o.quantity * o.productPrice;
+			x.subTotal = o.quantity * o.product.price;
 
 			var c = o.product.contract;
 			
