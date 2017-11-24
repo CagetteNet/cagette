@@ -13,6 +13,7 @@
 		
 		<!-- Cagette CSS -->
 		<link rel="stylesheet" type="text/css" href="/css/::getVariable('css')::/style.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/::getVariable('css')::/newShop.css"/>
 		<link href='//fonts.googleapis.com/css?family=Cantora+One&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 		
 		<!-- React 
@@ -54,11 +55,9 @@
 		<!-- font awesome -->
 		<script src="https://use.fontawesome.com/97d97e0dab.js"></script>
 		
-		<!-- Haxe JS
-		<script type="text/javascript" src="/js/::getVariable('js')::/app.js"></script>-->
-		
-		<!-- bundled js with browserify -->
-		<script type="text/javascript" src="/js/::getVariable('js')::/bundle.js"></script>
+		<!-- Haxe JS -->
+		<script type="text/javascript" src="/js/::getVariable('js')::/libs.js"></script>
+		<script type="text/javascript" src="/js/::getVariable('js')::/app.js"></script>
 	</head>
 
 	::if container==null:: ::set container="container":: ::end::

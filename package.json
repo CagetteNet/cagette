@@ -7,6 +7,7 @@
   "dependencies": {
     "bootstrap": "^3.3.4",
     "eonasdan-bootstrap-datetimepicker": "^4.7.14",
+    "haxe-modular": "^0.7.0",
     "jquery": "^2.2.4",
     "react": "^15.6.1",
     "react-bootstrap-typeahead": "1.4.2",
@@ -18,12 +19,22 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "cross-env": "^5.1.1",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.2",
+    "uglify-js": "^3.1.9",
     "watchify": "^3.9.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify --debug www/js/app.js -o www/js/bundle.js",
-    "build2": "babel src -d lib"
+    "build": "npm-run-all --parallel build:*",
+    "build:js": "haxe cagetteJs.hxml",
+    "build:sass": "node-sass html/css/newShop.scss html/css/newShop.css",
+    "watch:sass": "npm run build:sass -- --watch",
+    "build2": "babel src -d lib",
+    "libs:dev": "browserify js/libs/libs.js -o www/js/libs.js -d",
+    "libs:prod": "cross-env NODE_ENV=production browserify js/libs/libs.js | uglifyjs -c -m > www/js/libs.js",
+    "test": "haxe testsJS.hxml && node js/test/tests.js",
+    "prepush": "npm test"
   },
   "repository": {
     "type": "git",

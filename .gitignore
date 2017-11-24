@@ -9,9 +9,13 @@ lang/en/*
 lang/de/*
 www/file/*
 www/js/app.js
+www/js/libs.js
 tmp/*
 *node_modules*
 MakeFile
 *.map
 .haxelib
 html
+.temp
+www/css/*.css
+js/test/tests.js

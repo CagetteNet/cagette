@@ -1,0 +1,129 @@
+/*
+  SHOP
+*/
+.shop{
+
+  .shop-header {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: white;
+  }
+
+  .categories {
+    width: 70%;
+  
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+
+      .product {
+        display: flex;
+        width: 250px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        cursor: default;
+        user-select: none;
+
+        img {
+          object-fit: cover;
+        }
+
+        .body {
+          width: 100%;
+          background: white;
+          padding: 10px;
+        }
+
+        input {
+          width: 50%;
+        }
+
+        .button {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .filters {
+    position: fixed;
+    bottom: 140px;
+    right: 47px;
+    width: 25%;
+    padding: 1rem;
+    background-color: white;
+    cursor: default;
+
+    .filter {
+      color: #BBB;
+      cursor: pointer;
+
+      &.active {
+        color: #070;
+      }
+    }
+  }
+
+  .cart {
+    position: fixed;
+    top: 130px;
+    right: 47px;
+    width: 25%;
+    padding: 1rem;
+    background-color: white;
+    cursor: default;
+
+    .products-to-order {
+      margin-bottom: 2rem;
+
+      .product-to-order {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+
+        div {
+          display: flex;
+        }
+
+        .cart-action-buttons > * {
+          display: block;
+          margin-left: .5rem;
+          width: 2rem;
+          width: 2rem;
+          color: white;
+          text-align: center;
+          background-color: #070;
+          cursor: pointer;
+          line-height: 1.8rem;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .cart-footer {
+      bottom: 1rem;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .order-button {
+      margin-top: 1rem;
+      padding: .5rem;
+      background-color: #070;
+      color: white;
+      cursor: pointer;
+
+      &--disabled {
+        background-color: #555;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+}

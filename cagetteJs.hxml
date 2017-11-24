@@ -3,6 +3,8 @@
 -cp js
 -lib sugoi:git:https://github.com/bablukid/sugoi#i18n
 -lib react
+-lib modular
 -main App
 -debug
 -js www/js/app.js
+-D no-deprecation-warnings

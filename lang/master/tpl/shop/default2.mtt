@@ -1,0 +1,8 @@
+::use 'design.mtt'::
+<div id='shop'></div>
+<script>
+  $(function(){
+    _.shop(::place.id::, "::date::");
+  });
+</script>
+::end::

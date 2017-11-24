@@ -19,7 +19,7 @@
 -cp js
 -lib sugoi:git:https://github.com/bablukid/sugoi#i18n
 -lib react
--D react_global
+-lib modular
 -main App
 -js www/js/app.js
 -debug

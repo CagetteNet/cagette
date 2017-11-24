@@ -295,6 +295,13 @@ Called from controller/Main.hx line 117
 		view.category = 'shop';
 		d.dispatch(new controller.Shop());
 	}
+
+	@tpl('shop/default2.mtt')
+	function doShop2(place:db.Place, date:String) {
+		view.category = 'shop';
+		view.place = place;
+		view.date = date;
+	}
 	
 	@logged
 	function doProduct(d:Dispatch) {

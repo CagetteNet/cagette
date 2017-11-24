@@ -1,0 +1,9 @@
+# JS
+-js js/test/tests.js
+-main test.TestAll
+-cp js
+-cp common
+-lib utest
+-lib hxnodejs
+-lib sugoi:git:https://github.com/bablukid/sugoi#i18n
+-D test
