@@ -1,13 +1,7 @@
 ::use 'design.mtt'::
-	
 
-	
-
-
-
-	
 	<div class="col-md-6">
-		<h2>Importer une photo pour ::vendor.name::</h2>
+		<h2>::_("Import a foto for"):: ::vendor.name::</h2>
 		
 		
 		<div class="article">

@@ -29,6 +29,7 @@ enum GroupType{
 	GroupedOrders; 	//groupements d'achat
 	ProducerDrive;	//drive de producteurs
 	FarmShop;		//vente à la ferme
+	Consultant;		//Conseiller - vente à domicile
 }
 
 

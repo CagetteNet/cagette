@@ -21,4 +21,6 @@
 	smtp_port="587"
 	smtp_user="mon_email@mon_domaine.fr"
 	smtp_pass="blabla"
+
+	group_types="0;1;2;3"
 />

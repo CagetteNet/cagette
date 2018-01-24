@@ -157,12 +157,29 @@ class Group extends controller.Controller
 		f.addElement(new StringInput("name", t._("Name of your group"), "", true));
 		
 		//group type
-		var data = [
-			{label:t._("CSA"),value:"0"},
-			{label:t._("Grouped orders"),value:"1"},
-			{label:t._("Farmers collective"),value:"2"},
-			{label:t._("Farm shop"),value:"3"},
-		];	
+		var group_types = App.config.get("group_types").split(";");
+
+		var data = [];
+		var checkboxLabel = "";
+		for (groupeType in group_types)
+		{
+			switch groupeType {
+				case "0": data.push({label:t._("CSA"),value:groupeType});
+				case "1": data.push({label:t._("Grouped orders"),value:groupeType});
+				case "2": data.push({label:t._("Farmers collective"),value:groupeType});
+				case "3": data.push({label:t._("Farm shop"),value:groupeType});
+				case "4": data.push({label:t._("Consultant"),value:groupeType});
+			}
+			
+		}
+		// var data = [
+		// 	{label:t._("CSA"),value:"0"},
+		// 	{label:t._("Grouped orders"),value:"1"},
+		// 	{label:t._("Farmers collective"),value:"2"},
+		// 	{label:t._("Farm shop"),value:"3"},
+		// 	{label:t._("Consultant"),value:"4"},
+		// ];
+		
 		var gt = new sugoi.form.elements.RadioGroup("type", t._("Group type"), data ,"1","1",true,true,true);
 		f.addElement(gt);
 		
@@ -195,6 +212,10 @@ class Group extends controller.Controller
 			case GroupType.FarmShop : 
 				g.flags.set(db.Amap.AmapFlags.ShopMode);
 				g.regOption = db.Amap.RegOption.Open;
+				
+			case GroupType.Consultant : 
+				g.flags.set(db.Amap.AmapFlags.ShopMode);
+				g.regOption = db.Amap.RegOption.WaitingList;
 			}
 			
 			g.groupType = type;

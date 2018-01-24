@@ -1,6 +1,7 @@
 package controller;
 import db.UserContract;
 import sugoi.form.Form;
+import haxe.crypto.Md5;
 
 class Amap extends Controller
 {
@@ -28,7 +29,21 @@ class Amap extends Controller
 		var group = app.user.amap;
 		
 		var form = Form.fromSpod(group);
-	
+
+		//remove checkboxes GroupType that are not activated in the configuration
+		var e = form.getElement("groupType");
+		var radioG = cast(e, sugoi.form.elements.Enum);
+		var groups = App.config.get("group_types").split(";");
+		var groups2 = new Array();
+		for(group in groups)
+		{
+			groups2.push(Std.parseInt(group));
+		}
+		radioG.setActivatedValues(groups2);
+
+
+
+
 		if (form.checkToken()) {
 			form.toSpod(group);
 			
