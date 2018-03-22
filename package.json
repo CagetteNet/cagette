@@ -31,7 +31,8 @@
   },
   "scripts": {
     "build": "npm-run-all --parallel build:*",
-    "build:js": "haxe cagetteJs.hxml",
+    "build:php": "haxelib install cagette.hxml",
+    "build:js": "haxelib cagetteJs.hxml",
     "build:sass": "node-sass www/css -o www/css",
     "watch:sass": "npm run build:sass -- --watch",
     "build2": "babel src -d lib",
