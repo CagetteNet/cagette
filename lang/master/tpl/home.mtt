@@ -154,7 +154,7 @@
 						<div class="content orders">
 							<table class="table table-bordered">
 							<tr>
-									<th colspan="3">Producteurs présents à cette ditribution</th>
+									<th colspan="3"> Producteurs participants</th>
 								</tr>
 
 								::set vdistribs = d.getDistributions(1)::
