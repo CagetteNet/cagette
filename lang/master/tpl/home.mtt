@@ -147,22 +147,50 @@
 							
 						</div>
 
-					::elseif(hasShopMode)::
-						<div class="content orders">
-							<!-- products previews-->
-							::foreach p d.getProductsExcerpt(8)::
-							<div data-toggle="tooltip" data-placement="top" title="::p.name::"  style="background-image:url('::p.image::')" class="productImg medium"/> 
-							::end::
-						</div>
-					::end::
 					
 					::if(hasShopMode)::
 						
 						<!-- no var order : if shopmode, display order btn -->
 						<div class="content orders">
+							<table class="table table-bordered">
+							<tr>
+									<th colspan="3">Producteurs présents à cette ditribution</th>
+								</tr>
+
+								::set vdistribs = d.getDistributions(1)::
+								::set cdistribs = d.getDistributions(0)::
+
+								::foreach d vdistribs::
+
+									::if(d.length>0)::
+										<td>
+											::set contract = d._catalog::
+											<a href="/contract/view/::contract.id::">::contract.name::</a>
+										</td>
+										<td>
+											::contract._vendor.name::
+										</td>
+									::end::
+								::end::
+
+								::foreach d cdistribs::
+
+									::if(d.length>0)::
+										<td>
+											::set contract = d._catalog::
+											<a href="/contract/view/::contract.id::">::contract.name::</a>
+										</td>
+										<td>
+											::contract._vendor.name::
+										</td>
+									::end::
+								::end::
+							</table>
+
 							::set status = d.getState()::
 							<div class="text-center">
-								::if(status=="notYetOpen")::
+
+								if(status=="notYetOpen")::
 
 								<span class="disabled" style="font-size: 1.2em;">
 									<i class="icon icon-clock"></i>
