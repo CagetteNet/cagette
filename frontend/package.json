@@ -10,7 +10,7 @@
     "@material-ui/icons": "3.0.1",
     "@material-ui/lab": "^4.0.0-alpha.40",
     "@material-ui/pickers": "^3.2.10",
-    "bootstrap": "^3.4.0",
+    "bootstrap": "^3.4.1",
     "bowser": "^2.1.0",
     "cagette-react": "file:cagette-react",
     "date-fns": "^2.9.0",
